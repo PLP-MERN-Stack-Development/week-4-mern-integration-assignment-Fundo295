@@ -75,4 +75,10 @@ process.on('unhandledRejection', (err) => {
   process.exit(1);
 });
 
+// server/server.js (adding to your existing code)
+import postRoutes from './routes/posts.js';  // NEW
+
+// Add this after your existing middleware
+app.use('/api/posts', postRoutes);  // NEW ROUTE
+
 module.exports = app; 
